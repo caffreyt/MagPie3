@@ -45,8 +45,33 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
-		else
-		{
+        else if (statement.indexOf("cat") >= 0
+            || statement.indexOf("dog") >= 0
+            || statement.indexOf("pet") >= 0
+            || statement.indexOf("fish") >= 0)
+    {
+        response = "Tell me more about your pets.";
+    }
+    else if (statement.indexOf("Tanzcos") >= 0)
+    {
+        response = "He seems so totally rad, dude!";
+    }
+    else if (statement.indexOf("capitalism") >= 0)
+    {
+        response = "You are a fascist pig-dog!";
+    }
+    else if (statement.indexOf("weather") >= 0)
+    {
+        response = "Nice out, huh?";
+    }
+    else if (statement.indexOf("noob") >= 0)
+    {
+        response = "no u";
+    }
+    else if (statement.trim().length() <= 1)
+        response = "Say something, please.";
+    else
+        {
 			response = getRandomResponse();
 		}
 		return response;
@@ -144,28 +169,35 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
-		double r = Math.random();
-		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
-		String response = "";
+        final int NUMBER_OF_RESPONSES = 6;
+        double r = Math.random();
+        int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
+        String response = "";
 
-		if (whichResponse == 0)
-		{
-			response = "Interesting, tell me more.";
-		}
-		else if (whichResponse == 1)
-		{
-			response = "Hmmm.";
-		}
-		else if (whichResponse == 2)
-		{
-			response = "Do you really think so?";
-		}
-		else if (whichResponse == 3)
-		{
-			response = "You don't say.";
-		}
-
+        if (whichResponse == 0)
+        {
+            response = "Interesting, tell me more.";
+        }
+        else if (whichResponse == 1)
+        {
+            response = "Hmmm.";
+        }
+        else if (whichResponse == 2)
+        {
+            response = "Do you really think so?";
+        }
+        else if (whichResponse == 3)
+        {
+            response = "You don't say.";
+        }
+        else if (whichResponse == 4)
+        {
+            response = "Boring.";
+        }
+        else if (whichResponse == 5)
+        {
+            response = "Yawn.";
+        }
 		return response;
 	}
 
